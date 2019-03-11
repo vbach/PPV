@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/movieapp/node_modules
+/movieapp/.pnp
+/.pnp.js
+
+# testing
+/movieapp/coverage
+
+# production
+/movieapp/build
+
+# misc
+/movieapp/.DS_Store
+/movieapp/.env.local
+/movieapp/.env.development.local
+/movieapp/.env.test.local
+/movieapp/.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
