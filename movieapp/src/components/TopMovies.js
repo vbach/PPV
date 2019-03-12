@@ -1,4 +1,5 @@
 import React from "react"
+import Button from 'react-bootstrap/Button'
 
 class TopMovies extends React.Component {
 
@@ -24,14 +25,21 @@ class TopMovies extends React.Component {
         alert('Clicked.')
     }
     render() {
+
+        const url = "https://image.tmdb.org/t/p/w200/";
         return (
             <div>
                 <h1>Top Movies</h1>
                 {this.state.topMovies.map((item, key) =>
                     <div>
+
+
+                        <img src={url + item.poster_path} alt="Movie" className="float: left;" />
+
                         <h2 key={item.id}>{item.title}</h2>
                         <p>{item.overview}</p>
-                        <button onClick={() => this.handleClick(item.id)}>Read More</button>
+                        <Button variant="outline-info" href="#" size="lg">Read More</Button>
+
                     </div>
                 )}
 
