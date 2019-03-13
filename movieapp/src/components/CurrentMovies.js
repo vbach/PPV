@@ -34,8 +34,8 @@ class CurrentMovies extends React.Component {
                         <img key={item.id} src={url + item.poster_path} alt="Movie" />
 
                         <h2 key={item.id}>{item.title}</h2>
-                        <p>{item.overview}</p>
-                        <Button variant="outline-info" href="#" size="lg">Read More</Button>
+                        <p key={item.id}>{item.overview}</p>
+                        <Button variant="outline-info" href="#" size="lg" key={item.id}>Read More</Button>
                     </div>
                 )}
 

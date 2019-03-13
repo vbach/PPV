@@ -31,14 +31,14 @@ class TopMovies extends React.Component {
             <div>
                 <h1>Top Movies</h1>
                 {this.state.topMovies.map((item, key) =>
-                    <div>
+                    <div key={item.id}>
 
 
-                        <img src={url + item.poster_path} alt="Movie" className="float: left;" />
+                        <img src={url + item.poster_path} alt="Movie" key={item.id} className="float: left;" />
 
                         <h2 key={item.id}>{item.title}</h2>
-                        <p>{item.overview}</p>
-                        <Button variant="outline-info" href="#" size="lg">Read More</Button>
+                        <p key={item.id}>{item.overview}</p>
+                        <Button variant="outline-info" href="#" size="lg" key={item.id}>Read More</Button>
 
                     </div>
                 )}
