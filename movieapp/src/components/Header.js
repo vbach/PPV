@@ -1,5 +1,7 @@
+
+
 import React from "react"
-import { BrowserRouter as Link, NavLink } from "react-router-dom";
+import { Redirect, BrowserRouter as Link, NavLink } from "react-router-dom";
 import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap"
 
 import Search from "./Search"
@@ -15,17 +17,19 @@ class Header extends React.Component {
     }
 
     getInfo = () => {
-        fetch(`${API_URL}?api_key=${API_KEY}&language=en-US&query=${this.state.query}&page=1000&include_adult=false`)
+        fetch(`${API_URL}?api_key=${API_KEY}&language=en-US&query=${this.state.query}&page=1&include_adult=false`)
             .then(response => response.json())
             .then(data => this.setState({ results: data.results }));
+
     }
 
     handleInputChange = () => {
         this.setState({
             query: this.search.value
         }, () => {
-            if (this.state.query && this.state.query.length > 1) {
-                if (this.state.query.length % 2 === 0) {
+            if (this.state.query && this.state.query.length > 2) {
+                if (this.state.query.length % 3 === 0) {
+
                     this.getInfo()
                 }
             }
@@ -37,20 +41,19 @@ class Header extends React.Component {
 
 
                 <Navbar bg="light" expand="lg">
-                    <Navbar.Brand href="#home">Movie App</Navbar.Brand>
+                    <Navbar.Brand href="/">Movie App</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <NavLink to="/">Home</NavLink>
-                            <NavLink to="/Movie">Movie View</NavLink>
                         </Nav>
                         <Form inline>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" ref={input => this.search = input} onChange={this.handleInputChange} />
-                            <Button variant="outline-success">Search</Button>
+                            <Button variant="outline-success" >Search</Button>
                         </Form>
                     </Navbar.Collapse>
                 </Navbar>
                 <Search results={this.state.results} />
+
             </div>
         )
     }

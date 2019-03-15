@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
 class TopMovies extends React.Component {
@@ -31,16 +32,16 @@ class TopMovies extends React.Component {
             <div>
                 <h1>Top Movies</h1>
                 {this.state.topMovies.map((item, key) =>
-                    <div key={item.id}>
+                    <Link
+                        key={item.id}
+                        results={item}
+                        to={{
+                            pathname: '/Movie',
+                            state: { results: item }
+                        }}>
+                        <img src={url + item.poster_path} alt="Movie" key={item.id} />
+                    </Link>
 
-
-                        <img src={url + item.poster_path} alt="Movie" key={item.id} className="float: left;" />
-
-                        <h2 key={item.id}>{item.title}</h2>
-                        <p key={item.id}>{item.overview}</p>
-                        <Button variant="outline-info" href="#" size="lg" key={item.id}>Read More</Button>
-
-                    </div>
                 )}
 
             </div>
