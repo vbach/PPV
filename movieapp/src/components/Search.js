@@ -14,7 +14,20 @@ const Search = (props) => {
                 <Card.Text>
                     {r.overview}
                 </Card.Text>
-                <Button variant="outline-info" onClick={() => { document.getElementById("search").classList.add("hide") }}><Link results={r} to={{ pathname: '/Movie', state: { results: r } }}>Read More</Link></Button>
+                <Button
+                    variant="outline-info"
+                    onClick={() => {
+                        document.getElementById("search").classList.add("hide")
+                    }}>
+                    <Link
+                        results={r}
+                        to={{
+                            pathname: '/Movie',
+                            state: { results: r }
+                        }}>
+                        Read More
+                        </Link>
+                </Button>
             </Card.Body>
         </Card>
 

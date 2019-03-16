@@ -1,9 +1,8 @@
 body {
   margin: 0px;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -27,4 +26,77 @@ code {
 
 .show {
   display: visible;
+}
+
+.current-imgs {
+  width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Futura', Helvetica;
+  font-size: 36px;
+  font-weight: bold;
+  color: #2D7DD2;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 24px;
+  color: #FFA921;
+}
+
+.outline-info {
+  border: 1px solid #2D7DD2;
+}
+
+.search-span {
+  position: absolute;
+  margin-left: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 15px 10px 15px 25px;
+  height: 25px;
+  outline: none;
+  border: 1px solid #181818;
+}
+
+.sm-buttons {
+  border: 1px solid #2D7DD2;
+  background: #2D7DD2;
+  color: #fff;
+  width: 100%;
+  border-radius: 0;
+}
+
+.sm-buttons a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.current-movies {
+  margin-bottom: 30px;
+}
+
+.top-movies {
+  justify-content: space-between;
+}
+
+.top-imgs {
+  width: 30%;
+}
+
+.arrow-right {
+  color: #2D7DD2;
+  padding-right: 10px;
 }

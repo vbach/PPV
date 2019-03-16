@@ -1,9 +1,8 @@
 
 
 import React from "react"
-import { Redirect, BrowserRouter as Link, NavLink } from "react-router-dom";
-import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap"
-
+import { Nav, Navbar, Form, FormControl } from "react-bootstrap"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Search from "./Search"
 
 const API_URL = "https://api.themoviedb.org/3/search/movie";
@@ -47,8 +46,10 @@ class Header extends React.Component {
                         <Nav className="mr-auto">
                         </Nav>
                         <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" ref={input => this.search = input} onChange={this.handleInputChange} />
-                            <Button variant="outline-success" >Search</Button>
+                            <span className="search-span">
+                                <FontAwesomeIcon icon="search" />
+                            </span>
+                            <FormControl type="text" placeholder="Search" className="mr-sm-2 search-input" ref={input => this.search = input} onChange={this.handleInputChange} />
                         </Form>
                     </Navbar.Collapse>
                 </Navbar>
