@@ -1,5 +1,5 @@
 import React from "react"
-import Button from 'react-bootstrap/Button'
+import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 class CurrentMovies extends React.Component {
@@ -28,6 +28,9 @@ class CurrentMovies extends React.Component {
         // Image URL
         const url = "https://image.tmdb.org/t/p/w200/";
         return (
+
+
+
             <div className="row">
 
                 <div className="col-12">
@@ -35,13 +38,16 @@ class CurrentMovies extends React.Component {
                 </div>
                 {this.state.currentMovies.map((item, key) =>
 
-                    <div className="col-4 current-movies">
-                        <img key={item.id} src={url + item.backdrop_path} alt="Movie" className="current-imgs" />
-
-                        <h2 key={item.id}>{item.title}</h2>
-                        <p key={item.id}>{item.overview}</p>
-                        <Button variant="outline-info" href="#" size="sm" className="sm-buttons" key={item.id}><Link results={item} to={{ pathname: '/Movie', state: { results: item } }}>Read More</Link></Button>
-                    </div>
+                    <Card key={item.id} style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={url + item.backdrop_path} alt={item.title} className="current-imgs" />
+                        <Card.Body>
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Text>
+                                {item.overview}
+                            </Card.Text>
+                            <Link results={item} to={{ pathname: '/Movie', state: { results: item } }}><Button variant="outline-info" className="sm-buttons mt-auto">Read More</Button></Link>
+                        </Card.Body>
+                    </Card>
 
                 )}
             </div>

@@ -57,7 +57,7 @@ class TopMovies extends React.Component {
                                         pathname: '/Movie',
                                         state: { results: item }
                                     }}>
-                                    <Button variant="outline-info"> <span class="arrow-right">
+                                    <Button variant="outline-info"> <span className="arrow-right">
                                         <FontAwesomeIcon icon="arrow-right"></FontAwesomeIcon>
                                     </span> Read More</Button>
                                 </Link>

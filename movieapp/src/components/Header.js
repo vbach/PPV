@@ -37,8 +37,6 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-
-
                 <Navbar bg="light" expand="lg">
                     <Navbar.Brand href="/">Movie App</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -54,6 +52,7 @@ class Header extends React.Component {
                     </Navbar.Collapse>
                 </Navbar>
                 <Search results={this.state.results} />
+                {/* Button for submitting search. Use Link in Button to pass query and api. */}
 
             </div>
         )
