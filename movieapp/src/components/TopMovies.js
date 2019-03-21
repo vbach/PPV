@@ -37,30 +37,32 @@ class TopMovies extends React.Component {
         if (this.state.topMovies.results !== '') {
             return (
 
-                <div className="top-movies">
+                <div className="top-movies mt-5">
                     <h1>Top Movies</h1>
 
                     {this.state.topMovies.map((item, key) =>
 
 
-                        <Media key={item.id}>
+                        <Media key={item.id} className="mb-2">
                             <img src={url + item.poster_path} alt="Movie" key={item.id} className="mr-3 top-imgs" />
 
                             <Media.Body>
-                                <h3>{item.title ? item.title : item.original_name}</h3>
+                                <h3>
+                                    <Link
+                                        key={item.id}
+                                        results={item}
+                                        to={{
+                                            pathname: '/Movie',
+                                            state: { results: item }
+                                        }}>
+                                        {item.title ? item.title : item.original_name}
+                                        <span className="arrow-right">
+                                            <FontAwesomeIcon icon="arrow-right"></FontAwesomeIcon>
+                                        </span>
+                                    </Link></h3>
                                 <p>{this.truncateText(item.overview)}</p>
 
-                                <Link
-                                    key={item.id}
-                                    results={item}
-                                    to={{
-                                        pathname: '/Movie',
-                                        state: { results: item }
-                                    }}>
-                                    <Button variant="outline-info"> <span className="arrow-right">
-                                        <FontAwesomeIcon icon="arrow-right"></FontAwesomeIcon>
-                                    </span> Read More</Button>
-                                </Link>
+
                             </Media.Body>
                         </Media>
 

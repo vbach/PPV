@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieView from './components/MovieView';
+import SearchResults from './components/SearchResults'
 import Main from './components/Main'
 import Header from './components/Header'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -22,7 +23,8 @@ class App extends Component {
 
             <Switch>
               <Route exact path="/" component={Main} />
-              <Route exact path="/Movie" component={MovieView} />
+              <Route exact path="/movie" component={MovieView} />
+              <Route exact path="/search-results" component={SearchResults} />
             </Switch>
 
           </div>

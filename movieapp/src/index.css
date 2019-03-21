@@ -12,6 +12,17 @@ code {
     monospace;
 }
 
+
+.top-movies a {
+  text-decoration: none;
+  color: #FFA921;
+}
+
+.top-movies a:hover {
+  text-decoration: none;
+  color: #218380;
+}
+
 .top-images {
   float: left;
 }
@@ -77,6 +88,10 @@ h3 {
   border-radius: 0;
 }
 
+.arrow-white {
+  color: #fff !important;
+}
+
 .sm-buttons a {
   color: #fff;
   font-size: 16px;
@@ -97,6 +112,24 @@ h3 {
 }
 
 .arrow-right {
-  color: #2D7DD2;
-  padding-right: 10px;
+  color: #FFA921;
+  padding-left: 10px;
+}
+
+.arrow-right a:hover {
+  color: #218380;
+}
+
+.nav {
+  background: #FFA921;
+}
+
+.brand {
+  color: white !important;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.search {
+  z-index: 9999;
 }

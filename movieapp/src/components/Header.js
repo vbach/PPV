@@ -15,6 +15,8 @@ class Header extends React.Component {
         results: []
     }
 
+
+
     getInfo = () => {
         fetch(`${API_URL}?api_key=${API_KEY}&language=en-US&query=${this.state.query}&page=1&include_adult=false`)
             .then(response => response.json())
@@ -37,8 +39,8 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <Navbar bg="light" expand="lg">
-                    <Navbar.Brand href="/">Movie App</Navbar.Brand>
+                <Navbar className="nav" expand="lg">
+                    <Navbar.Brand className="brand" href="/">Movie App</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">

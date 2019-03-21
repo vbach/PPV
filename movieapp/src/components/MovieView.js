@@ -49,7 +49,7 @@ class MovieView extends React.Component {
         const imdbUrl = "https://www.imdb.com/title/";
         return (
 
-            <div className="container">
+            <div className="container mt-5">
                 <div className="row">
 
                     <div className="col-6">
@@ -61,7 +61,10 @@ class MovieView extends React.Component {
                         <h1>{this.state.currentMovie.title}</h1>
                         <h2>{this.state.currentMovie.tagline}</h2>
                         <p>{this.state.currentMovie.overview}</p>
-                        <p><a href={this.state.currentMovie.homepage} target="_blank">Official Homepage</a> <a href={imdbUrl + this.state.currentMovie.imdb_id} target="_blank">IMDB</a></p>
+                        <p>
+                            {this.state.currentMovie.homepage ? <a href={this.state.currentMovie.homepage} target="_blank">Official Homepage </a> : ""}
+
+                            <a href={imdbUrl + this.state.currentMovie.imdb_id} target="_blank">IMDB</a></p>
                         <p>Budget: ${this.state.currentMovie.budget}</p>
                         <p>Revenue: ${this.state.currentMovie.revenue}</p>
                         <p>Popularity: {this.state.currentMovie.popularity}%</p>

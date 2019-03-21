@@ -33,7 +33,7 @@ const Search = (props) => {
 
 
     ))
-    return <div className="row" id="search">{options}</div>
+    return <div className="row search" id="search">{options}</div>
 }
 
 export default Search
